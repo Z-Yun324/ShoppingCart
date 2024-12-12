@@ -9,7 +9,7 @@
         {{ data.name }}
         <div v-if="data.isNew" class="badge badge-secondary">NEW</div>
       </h2>
-      <p>{{ data.description }}</p>
+      <p>$ {{ data.price }}</p>
       <div class="card-actions justify-end">
         <div v-for="tag in data.tags" :key="tag" class="badge badge-outline">
           {{ tag }}

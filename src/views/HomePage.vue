@@ -1,6 +1,8 @@
 <!-- views/HomePage.vue -->
 <template>
-  <div class="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div
+    class="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+  >
     <Card v-for="item in items" :key="item.id" :data="item" />
   </div>
 </template>
@@ -21,6 +23,7 @@ onMounted(async () => {
       category.items.map((item: any) => ({
         id: item.id,
         name: item.name,
+        price: item.price,
         description: item.description,
         image: item.image || "https://via.placeholder.com/150", // 預設圖片
         isNew: item.isNew,

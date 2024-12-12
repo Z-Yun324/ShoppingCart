@@ -3,12 +3,9 @@ import Navbar from "./components/Navbar.vue";
 </script>
 
 <template>
-  <div>
-    <!-- 固定顯示的 NavBar -->
-    <Navbar />
-
-    <!-- 路由的內容區域 -->
-    <router-view />
+  <div class="flex flex-col gap-10">
+    <div class="z-50"><Navbar /></div>
+    <div><router-view /></div>
   </div>
 </template>
 
