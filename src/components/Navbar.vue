@@ -21,7 +21,9 @@
           <li><a>Item 3</a></li>
         </ul>
       </div>
-      <a class="btn btn-ghost text-xl">購物車</a>
+      <router-link to="/">
+        <a class="btn btn-ghost text-xl">購物車</a>
+      </router-link>
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
@@ -45,9 +47,10 @@
       <div tabindex="0" role="button" class="btn btn-ghost">
         <PhUser :size="32" />
       </div>
-      <div tabindex="0" role="button" class="btn btn-ghost">
-        <PhShoppingCart :size="32" />
-      </div>
+      <router-link to="/cart">
+        <div tabindex="0" role="button" class="btn btn-ghost">
+          <PhShoppingCart :size="32" /></div
+      ></router-link>
     </div>
   </div>
 </template>

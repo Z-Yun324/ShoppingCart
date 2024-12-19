@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../views/HomePage.vue";
+import ItemDetails from "../views/ItemDetailsPage.vue";
+import ShoppingCartPage from "../views/ShoppingCartPage.vue";
 
 const routes = [
   {
@@ -7,12 +9,18 @@ const routes = [
     name: "Home",
     component: HomePage,
   },
-  // 你未來可以在這裡新增其他頁面，例如 About
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import('@/views/AboutPage.vue'),
-  // },
+  {
+    path: "/item/:id",
+    name: "ItemDetails",
+    component: ItemDetails,
+    props: true,
+  },
+  {
+    path: "/cart",
+    name: "ShoppingCartPage",
+    component: ShoppingCartPage,
+    props: true,
+  },
 ];
 
 const router = createRouter({
