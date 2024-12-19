@@ -58,7 +58,7 @@
       </div>
     </div>
     <!-- 分頁按鈕 -->
-    <div class="flex join justify-center mt-4">
+    <div class="flex join justify-center my-4">
       <button
         class="join-item btn"
         :disabled="currentPage === 1"
@@ -66,7 +66,15 @@
       >
         «
       </button>
-      <span class="join-item btn">Page {{ currentPage }}</span>
+      <button
+        v-for="page in totalPages"
+        :key="page"
+        @click="changePage(page)"
+        class="join-item btn"
+        :class="{ 'btn-primary': currentPage === page }"
+      >
+        {{ page }}
+      </button>
       <button
         class="join-item btn"
         :disabled="currentPage === totalPages"
