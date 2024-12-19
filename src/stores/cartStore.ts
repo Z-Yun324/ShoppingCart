@@ -4,6 +4,8 @@ import { Item } from "../model/items";
 export const useCartStore = defineStore("cart", {
   state: () => ({
     cartItems: [] as Item[],
+    currentPage: 1, // 當前頁碼
+    itemsPerPage: 5, // 每頁商品數量
     // items: [] as Array<{ id: string, name: string, quantity: number, price: number }>,
   }),
 
@@ -38,9 +40,11 @@ export const useCartStore = defineStore("cart", {
         console.log(`Updated item ${itemId} quantity: ${item.quantity}`);
       }
     },
-    // 計算購物車商品的數量
-    cartCount: (state) => {
-      return state.cartItems.reduce((count, item) => count + item.quantity, 0);
+
+    changePage(page: number) {
+      if (page > 0 && page <= this.totalPages) {
+        this.currentPage = page;
+      }
     },
   },
 
@@ -51,6 +55,20 @@ export const useCartStore = defineStore("cart", {
         (total, item) => total + item.price * item.quantity,
         0
       );
+    },
+    // 計算總頁數
+    totalPages(state) {
+      return Math.ceil(state.cartItems.length / state.itemsPerPage);
+    },
+    // 計算購物車商品的數量
+    cartCount: (state) => {
+      return state.cartItems.reduce((count, item) => count + item.quantity, 0);
+    },
+    // 計算當前頁面的商品
+    paginatedItems(state) {
+      const start = (state.currentPage - 1) * state.itemsPerPage;
+      const end = start + state.itemsPerPage;
+      return state.cartItems.slice(start, end);
     },
   },
 });

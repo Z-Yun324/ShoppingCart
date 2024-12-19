@@ -15,7 +15,7 @@
         </thead>
         <tbody>
           <!-- 顯示購物車內商品的每一行 -->
-          <tr v-for="item in cartItems" :key="item.id">
+          <tr v-for="item in paginatedItems" :key="item.id">
             <td>
               <img
                 :src="item.image || defaultImage"
@@ -57,6 +57,24 @@
         <button @click="checkout" class="btn btn-danger">前往結帳</button>
       </div>
     </div>
+    <!-- 分頁按鈕 -->
+    <div class="flex join justify-center mt-4">
+      <button
+        class="join-item btn"
+        :disabled="currentPage === 1"
+        @click="changePage(currentPage - 1)"
+      >
+        «
+      </button>
+      <span class="join-item btn">Page {{ currentPage }}</span>
+      <button
+        class="join-item btn"
+        :disabled="currentPage === totalPages"
+        @click="changePage(currentPage + 1)"
+      >
+        »
+      </button>
+    </div>
   </div>
 </template>
 
@@ -68,6 +86,9 @@ import { useCartStore } from "../stores/cartStore";
 const cartStore = useCartStore();
 const cartItems = computed(() => cartStore.cartItems);
 const totalPrice = computed(() => cartStore.totalPrice);
+const currentPage = computed(() => cartStore.currentPage);
+const totalPages = computed(() => cartStore.totalPages);
+const paginatedItems = computed(() => cartStore.paginatedItems);
 const defaultImage = "https://via.placeholder.com/150"; // 預設圖片
 
 // 移除商品的函式
@@ -96,4 +117,7 @@ function checkout() {
   // 可以在這裡進一步整合付款邏輯
   // 導航到結帳頁面
 }
+const changePage = (page: number) => {
+  cartStore.changePage(page);
+};
 </script>
