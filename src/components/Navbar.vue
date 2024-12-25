@@ -49,11 +49,25 @@
       </div>
       <router-link to="/cart">
         <div tabindex="0" role="button" class="btn btn-ghost">
-          <PhShoppingCart :size="32" /></div
-      ></router-link>
+          <div class="relative">
+            <PhShoppingCart :size="32" />
+            <div
+              v-if="cartCount > 0"
+              class="badge badge-secondary absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2"
+            >
+              {{ cartCount }}
+            </div>
+          </div>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>
 
 <!--JS/TS-->
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed } from "vue";
+import { useCartStore } from "../stores/cartStore";
+const cartStore = useCartStore();
+const cartCount = computed(() => cartStore.cartCount);
+</script>
