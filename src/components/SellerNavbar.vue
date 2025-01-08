@@ -1,44 +1,11 @@
 <template>
   <div class="navbar flex bg-base-100 shadow-lg">
     <div class="navbar-start">
-      <div class="dropdown">
-        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-          <PhList :size="32" />
-        </div>
-        <ul
-          tabindex="0"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-        >
-          <li><a>Item 1</a></li>
-          <li>
-            <a>Parent</a>
-            <ul class="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </li>
-          <li><a>Item 3</a></li>
-        </ul>
-      </div>
-      <router-link to="/">
-        <a class="btn btn-ghost text-xl">購物車</a>
+      <router-link to="/seller-backend">
+        <a class="btn btn-ghost text-xl">賣家中心</a>
       </router-link>
     </div>
-    <div class="navbar-center hidden lg:flex">
-      <ul class="menu menu-horizontal px-1">
-        <li><a>Item 1</a></li>
-        <li>
-          <details>
-            <summary>Parent</summary>
-            <ul class="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </details>
-        </li>
-        <li><a>Item 3</a></li>
-      </ul>
-    </div>
+    <div class="navbar-center hidden lg:flex"></div>
     <div class="navbar-end flex">
       <div
         class="flex items-center space-x-2 mr-2 transition-all duration-300 opacity-0 scale-95"
@@ -74,33 +41,19 @@
         <PhMagnifyingGlass :size="32" />
       </div>
 
-      <router-link to="/seller-backend">
+      <router-link to="/">
         <div tabindex="0" role="button" class="btn btn-ghost">
           <PhUser :size="32" /></div
       ></router-link>
-      <router-link to="/cart">
-        <div tabindex="0" role="button" class="btn btn-ghost">
-          <div class="relative">
-            <PhShoppingCart :size="32" />
-            <div
-              v-if="cartCount > 0"
-              class="badge badge-secondary absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2"
-            >
-              {{ cartCount }}
-            </div>
-          </div>
-        </div>
-      </router-link>
     </div>
   </div>
 </template>
 
 <!--JS/TS-->
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { ref } from "vue";
 import { useCartStore } from "../stores/cartStore";
 const cartStore = useCartStore();
-const cartCount = computed(() => cartStore.cartCount);
 
 const showSearch = ref(false); // 控制搜尋框的顯示與隱藏
 const searchQuery = ref(""); // 搜尋框中的內容
