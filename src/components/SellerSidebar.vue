@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-1/2 md:w-1/3 lg:w-64 fixed h-screen lg:block border-r"
+    class="w-1/2 md:w-1/3 lg:w-64 h-screen lg:block border-r"
     v-show="visible"
   >
     <div class="mb-4 px-4">

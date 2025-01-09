@@ -1,10 +1,10 @@
 <template>
-  <div class="p-4 gap-4 lg:flex">
+  <div class="flex w-full h-full gap-4 p-4">
     <!-- Sidebar -->
     <SellerSidebar :visible="isSidebarVisible" @navigate="setActiveComponent" />
 
     <!-- Main Content -->
-    <div class="lg:w-full lg:ml-64 px-6 py-8">
+    <div class="flex w-full h-full">
       <!-- 動態顯示內容 -->
       <component :is="activeComponent" />
     </div>
