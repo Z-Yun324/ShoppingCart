@@ -12,15 +12,17 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { markRaw, ref } from "vue";
 import SellerSidebar from "../components/SellerSidebar.vue";
 import SellerHome from "../views/SellerHome.vue";
 import SellerOrders from "../views/SellerOrders.vue";
 import SellerPerformance from "../views/SellerPerformance.vue";
+
+// 使用 markRaw 包裝所有組件
 const componentsMap = {
-  SellerHome,
-  SellerOrders,
-  SellerPerformance,
+  SellerHome: markRaw(SellerHome),
+  SellerOrders: markRaw(SellerOrders),
+  SellerPerformance: markRaw(SellerPerformance),
 };
 
 const activeComponent = ref(componentsMap.SellerHome);
@@ -28,4 +30,7 @@ const activeComponent = ref(componentsMap.SellerHome);
 const setActiveComponent = (componentName) => {
   activeComponent.value = componentsMap[componentName];
 };
+
+// 控制 Sidebar 顯示/隱藏
+const isSidebarVisible = ref(true); // 假設 Sidebar 預設顯示
 </script>
