@@ -32,14 +32,14 @@
       <p class="pl-4 text-sm font-semibold mb-1">PRODUCTS</p>
       <div
         class="w-full flex items-center text-blue-400 h-10 pl-4 hover:bg-gray-200 rounded-lg cursor-pointer"
-        @click=""
+        @click="$emit('navigate', 'SellerAddProducts')"
       >
         <PhPlusCircle :size="32" />
         <span class="text-gray-700">新增商品</span>
       </div>
       <div
         class="w-full flex items-center text-blue-400 h-10 pl-4 hover:bg-gray-200 rounded-lg cursor-pointer"
-        @click=""
+        @click="$emit('navigate', 'SellerProductManagement')"
       >
         <PhNotepad :size="32" />
         <span class="text-gray-700">商品管理</span>

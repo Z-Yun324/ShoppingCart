@@ -74,7 +74,7 @@
         <PhMagnifyingGlass :size="32" />
       </div>
 
-      <router-link to="/seller-backend">
+      <router-link to="/login">
         <div tabindex="0" role="button" class="btn btn-ghost">
           <PhUser :size="32" /></div
       ></router-link>

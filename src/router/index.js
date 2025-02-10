@@ -42,6 +42,12 @@ const routes = [
     component: SellerBackend,
     props: true,
   },
+  {
+    path: "/404",
+    name: "Page404",
+    component: () => import("../views/Page404.vue"),
+  },
+  { path: "/:pathMatch(.*)*", name: "Any", redirect: "/404" },
   { path: "/seller-home", component: SellerHome },
   // { path: "/seller-orders", component: OrderManagement },
   // { path: "/seller-performance", component: Performance },

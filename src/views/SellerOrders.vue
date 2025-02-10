@@ -52,7 +52,7 @@
         role="tabpanel"
         class="tab-content bg-base-100 border-base-300 rounded-box p-6"
       >
-        Tab content 3
+        <Tab3 />
       </div>
 
       <!-- Tab 4 -->
@@ -70,7 +70,7 @@
         role="tabpanel"
         class="tab-content bg-base-100 border-base-300 rounded-box p-6"
       >
-        Tab content 4
+        <Tab4 />
       </div>
 
       <!-- Tab 5 -->
@@ -88,7 +88,7 @@
         role="tabpanel"
         class="tab-content bg-base-100 border-base-300 rounded-box p-6"
       >
-        Tab content 5
+        <Tab5 />
       </div>
 
       <!-- Tab 6 -->
@@ -106,7 +106,7 @@
         role="tabpanel"
         class="tab-content bg-base-100 border-base-300 rounded-box p-6"
       >
-        Tab content 6
+        <Tab6 />
       </div>
     </div>
   </div>
@@ -116,5 +116,9 @@
 import { ref } from "vue";
 import Tab1 from "../components/Tab1All.vue";
 import Tab2 from "../components/Tab2Confirmed.vue";
+import Tab3 from "../components/Tab3Shipment.vue";
+import Tab4 from "../components/Tab4Shipping.vue";
+import Tab5 from "../components/Tab5Completed.vue";
+import Tab6 from "../components/Tab6Cancel.vue";
 const selectedTab = ref(1); // 預設選中 Tab 1
 </script>

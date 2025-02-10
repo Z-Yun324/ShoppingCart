@@ -1,8 +1,10 @@
 <template>
   <div>
     <h1>營運表現</h1>
-    <p>這裡是營運表現的內容。</p>
+    <PowerBIEmbed />
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import PowerBIEmbed from "../components/PowerBIEmbed.vue";
+</script>

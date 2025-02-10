@@ -12,6 +12,7 @@
           <th>商品名稱</th>
           <th>訂單編號</th>
           <th>買家編號</th>
+          <th>確認時間</th>
           <th>物流方式</th>
           <th></th>
         </tr>
@@ -27,6 +28,7 @@
           <td>商品 A</td>
           <td>#123456</td>
           <td>Buyer001</td>
+          <td>2025-01-10 14:30</td>
           <td>宅配</td>
           <th>
             <button class="btn btn-ghost btn-xs">details</button>
@@ -42,6 +44,7 @@
           <td>商品 B</td>
           <td>#123457</td>
           <td>Buyer002</td>
+          <td>2025-01-11 09:15</td>
           <td>超商取貨</td>
           <th>
             <button class="btn btn-ghost btn-xs">details</button>
@@ -57,6 +60,7 @@
           <td>商品 C</td>
           <td>#123458</td>
           <td>Buyer003</td>
+          <td>2025-01-12 18:45</td>
           <td>宅配</td>
           <th>
             <button class="btn btn-ghost btn-xs">details</button>
@@ -72,6 +76,7 @@
           <td>商品 D</td>
           <td>#123459</td>
           <td>Buyer004</td>
+          <td>2025-01-13 10:00</td>
           <td>超商取貨</td>
           <th>
             <button class="btn btn-ghost btn-xs">details</button>
@@ -83,5 +88,5 @@
 </template>
 
 <script setup>
-// 可以根據需要在此處增加任何邏輯
+// 可在此添加任何邏輯處理
 </script>

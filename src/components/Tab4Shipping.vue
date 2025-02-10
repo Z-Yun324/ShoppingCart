@@ -9,9 +9,9 @@
               <input type="checkbox" class="checkbox" />
             </label>
           </th>
-          <th>商品名稱</th>
           <th>訂單編號</th>
           <th>買家編號</th>
+          <th>出貨時間</th>
           <th>物流方式</th>
           <th></th>
         </tr>
@@ -24,9 +24,9 @@
               <input type="checkbox" class="checkbox" />
             </label>
           </th>
-          <td>商品 A</td>
-          <td>#123456</td>
-          <td>Buyer001</td>
+          <td>#456123</td>
+          <td>Buyer101</td>
+          <td>2025-01-12 10:00</td>
           <td>宅配</td>
           <th>
             <button class="btn btn-ghost btn-xs">details</button>
@@ -39,9 +39,9 @@
               <input type="checkbox" class="checkbox" />
             </label>
           </th>
-          <td>商品 B</td>
-          <td>#123457</td>
-          <td>Buyer002</td>
+          <td>#456124</td>
+          <td>Buyer102</td>
+          <td>2025-01-13 14:30</td>
           <td>超商取貨</td>
           <th>
             <button class="btn btn-ghost btn-xs">details</button>
@@ -54,9 +54,9 @@
               <input type="checkbox" class="checkbox" />
             </label>
           </th>
-          <td>商品 C</td>
-          <td>#123458</td>
-          <td>Buyer003</td>
+          <td>#456125</td>
+          <td>Buyer103</td>
+          <td>2025-01-14 08:45</td>
           <td>宅配</td>
           <th>
             <button class="btn btn-ghost btn-xs">details</button>
@@ -69,9 +69,9 @@
               <input type="checkbox" class="checkbox" />
             </label>
           </th>
-          <td>商品 D</td>
-          <td>#123459</td>
-          <td>Buyer004</td>
+          <td>#456126</td>
+          <td>Buyer104</td>
+          <td>2025-01-15 17:20</td>
           <td>超商取貨</td>
           <th>
             <button class="btn btn-ghost btn-xs">details</button>
@@ -83,5 +83,5 @@
 </template>
 
 <script setup>
-// 可以根據需要在此處增加任何邏輯
+// 可在此撰寫相關邏輯，例如處理表格資料
 </script>

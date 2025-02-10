@@ -12,17 +12,20 @@
 </template>
 
 <script setup>
-import { markRaw, ref } from "vue";
+import { ref } from "vue";
 import SellerSidebar from "../components/SellerSidebar.vue";
 import SellerHome from "../views/SellerHome.vue";
 import SellerOrders from "../views/SellerOrders.vue";
 import SellerPerformance from "../views/SellerPerformance.vue";
-
+import SellerAddProducts from "./SellerAddProducts.vue";
+import SellerProductManagement from "./SellerProductManagement.vue";
 // 使用 markRaw 包裝所有組件
 const componentsMap = {
-  SellerHome: markRaw(SellerHome),
-  SellerOrders: markRaw(SellerOrders),
-  SellerPerformance: markRaw(SellerPerformance),
+  SellerHome,
+  SellerOrders,
+  SellerPerformance,
+  SellerAddProducts,
+  SellerProductManagement,
 };
 
 const activeComponent = ref(componentsMap.SellerHome);

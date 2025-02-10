@@ -10,6 +10,7 @@
           <input
             type="text"
             class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full"
+            v-model="loginForm.userEmail"
           />
           <label class="font-semibold text-sm text-gray-600 pb-1 block"
             >Password</label
@@ -17,6 +18,7 @@
           <input
             type="text"
             class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full"
+            v-model="loginForm.userPassword"
           />
           <button
             type="button"
@@ -57,4 +59,8 @@
     </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+import { reactive } from "vue";
+
+let loginForm = reactive({ userEmail: "", userPassword: "" });
+</script>
