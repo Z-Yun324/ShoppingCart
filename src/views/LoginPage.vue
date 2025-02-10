@@ -16,13 +16,14 @@
             >Password</label
           >
           <input
-            type="text"
+            type="password"
             class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full"
             v-model="loginForm.userPassword"
           />
           <button
             type="button"
             class="flex items-center justify-center transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold"
+            @click="login"
           >
             <span class="inline-block mr-2">登入</span>
             <PhArrowRight :size="20" />
@@ -61,6 +62,14 @@
 </template>
 <script setup>
 import { reactive } from "vue";
+import { useUserStore } from "../stores/user";
+const useStore = useUserStore();
+const loginForm = reactive({ userEmail: "", userPassword: "" });
 
-let loginForm = reactive({ userEmail: "", userPassword: "" });
+const login = () => {
+  console.log("Login Form:", loginForm); // 查看整個物件的狀態
+  console.log("Email:", loginForm.userEmail); // 單獨查看 Email
+  console.log("Password:", loginForm.userPassword); // 單獨查看 Password
+  useStore.userLogin(loginForm.userEmail, loginForm.userPassword);
+};
 </script>
