@@ -1,13 +1,24 @@
 <script setup>
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import Navbar from "./components/Navbar.vue";
 import SellerNavbar from "./components/SellerNavbar.vue";
-
+import request from "./utils/request";
 const route = useRoute();
 
 // 根據當前路由來判斷是否顯示賣家後台的導航欄
 const isSellerRoute = computed(() => route.name === "SellerBackend");
+
+onMounted(() => {
+  request({
+    url: "/user/login",
+    method: "post",
+    data: {
+      username: "admin",
+      PhPassword: "1111111",
+    },
+  });
+});
 </script>
 
 <template>
