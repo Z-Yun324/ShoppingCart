@@ -34,7 +34,7 @@ const mockApiList = [
   // 用户登录接口
   {
     url: "/api/user/login", // 请求地址
-    method: "post", // 请求方式
+    method: "POST", // 请求方式
     response: ({ body }) => {
       // 获取请求体携带过来的用户名与密码
       const { username, password } = body;
@@ -46,7 +46,7 @@ const mockApiList = [
 
       // 如果没有找到对应的用户，则返回失败信息
       if (!checkUser) {
-        return { code: 201, data: { message: "账号或者密码不正确" } };
+        return { code: 201, data: { message: "帳號或密碼不正確" } };
       }
 
       // 如果找到用户，则返回成功的 token 信息

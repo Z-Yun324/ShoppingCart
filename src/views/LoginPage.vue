@@ -10,7 +10,7 @@
           <input
             type="text"
             class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full"
-            v-model="loginForm.userEmail"
+            v-model="loginFormData.userEmail"
           />
           <label class="font-semibold text-sm text-gray-600 pb-1 block"
             >Password</label
@@ -18,7 +18,7 @@
           <input
             type="password"
             class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full"
-            v-model="loginForm.userPassword"
+            v-model="loginFormData.userPassword"
           />
           <button
             type="button"
@@ -64,12 +64,10 @@
 import { reactive } from "vue";
 import { useUserStore } from "../stores/user";
 const useStore = useUserStore();
-const loginForm = reactive({ userEmail: "", userPassword: "" });
+const loginFormData = reactive({ userEmail: "", userPassword: "" });
+import {}
 
 const login = () => {
-  console.log("Login Form:", loginForm); // 查看整個物件的狀態
-  console.log("Email:", loginForm.userEmail); // 單獨查看 Email
-  console.log("Password:", loginForm.userPassword); // 單獨查看 Password
-  useStore.userLogin(loginForm.userEmail, loginForm.userPassword);
+  useStore.userLogin(loginFormData);
 };
 </script>

@@ -1,14 +1,21 @@
-import axios from "axios";
 import { defineStore } from "pinia";
-
+import { reqLogin } from "../api/user";
+import { loginForm } from "../model/user";
 export const useUserStore = defineStore("User", {
-  state: () => ({ userEmail: "", userPassword: "" }),
+  state: () => ({ userEmail: "", userPassword: "", token: "" }),
 
   actions: {
-    userLogin(userEmail, userPassword) {
-      console.log("User Email:", userEmail); // 應該能夠顯示正確的值
-      console.log("User Password:", userPassword);
-      axios.get("/api/user/info");
+    async userLogin(data: loginForm) {
+      console.log(data);
+
+      const result = await reqLogin(data);
+      console.log(result);
+
+      if (result.status == 200) {
+        this.token = this.token;
+        console.log(result.data.data.token);
+      } else {
+      }
     },
   },
 
